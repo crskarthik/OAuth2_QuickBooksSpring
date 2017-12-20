@@ -53,7 +53,9 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
 	private void callDiscoveryDocument() {
 		
 		 HttpGet discoveryDocumentReq = new HttpGet(env.getProperty("DiscoveryAPIHost"));
-		 try {
+		//   HttpGet discoveryDocumentReq = new HttpGet("https://quickbooks.api.intuit.com/v3/company/123145945204049/reports/GeneralLedger?start_date=2017-11-01&end_date=2017-12-31");
+// OAuth2AppRedirectUri=http://localhost:8080/oauth2redirect
+		try {
 	            HttpResponse response = CLIENT.execute(discoveryDocumentReq);
 
 	            logger.info("Response Code : "+ response.getStatusLine().getStatusCode());
